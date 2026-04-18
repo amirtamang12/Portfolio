@@ -1,26 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Tamang | IT Professional</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Amir Tamang | IT Graduate Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <header>
-        <h1>Amir Tamang</h1>
-        <p>Master of IT Student @ ACU</p>
+<body class="bg-slate-900 text-slate-100 font-sans">
+
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tighter text-blue-500">AT.</span>
+            <div class="space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#contact" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="min-h-screen flex items-center justify-center pt-16">
+        <div class="text-center px-4">
+            <h2 class="text-blue-500 font-mono mb-4 text-lg">Hi, my name is</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Amir Tamang.</h1>
+            <h3 class="text-3xl md:text-5xl font-bold text-slate-400 mb-8 leading-tight">
+                Master of IT student building software solutions.
+            </h3>
+            <p class="max-w-xl mx-auto text-slate-400 text-lg mb-10">
+                Currently pursuing my Master's at ACU while developing web applications 
+                and game engines. Focused on clean code and scalable architecture.
+            </p>
+            <a href="#projects" class="border border-blue-500 text-blue-500 px-8 py-4 rounded font-medium hover:bg-blue-500/10 transition">
+                Check out my work
+            </a>
+        </div>
     </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Currently studying at Australian Catholic University while working in the hospitality and logistics sectors.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>RPG Adventure Game</h3>
-            <p>A JavaScript-based game engine featuring wave management and sprite rendering.</p>
+
+    <section id="projects" class="py-24 bg-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="text-blue-500 font-mono mr-4 text-xl">01.</span> Projects
+                <div class="h-px bg-slate-700 flex-grow ml-8"></div>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 hover:-translate-y-2 transition-transform shadow-xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-regular fa-folder text-4xl text-blue-500"></i>
+                        <div class="space-x-4">
+                            <a href="#" class="text-xl hover:text-blue-500"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="text-xl hover:text-blue-500"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">RPG Adventure Engine</h3>
+                    <p class="text-slate-400 mb-6">
+                        A custom 2D game engine built with JavaScript Canvas. Features automated wave management, 
+                        dynamic sprite rendering, and mobile-responsive controls.
+                    </p>
+                    <div class="flex flex-wrap gap-3 font-mono text-xs text-blue-400">
+                        <span>JavaScript</span>
+                        <span>HTML5 Canvas</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+
+                </div>
         </div>
     </section>
+
+    <footer id="contact" class="py-24 text-center">
+        <h2 class="text-blue-500 font-mono mb-4 text-lg">02. What's Next?</h2>
+        <h3 class="text-4xl font-bold text-white mb-6">Get In Touch</h3>
+        <p class="max-w-md mx-auto text-slate-400 mb-10 text-lg">
+            I'm currently looking for entry-level IT opportunities. Whether you have a question or just want to say hi, my inbox is always open!
+        </p>
+        <a href="mailto:amir.yonjan12@gmail.com" class="border-2 border-blue-500 text-blue-500 px-10 py-4 rounded font-bold hover:bg-blue-500/10 transition">
+            Say Hello
+        </a>
+    </footer>
+
 </body>
 </html>
