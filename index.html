@@ -3,66 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Amir Tamang | Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* A simple background gradient for a fresh, clean vibe */
+        .vibe-bg {
+            background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body class="vibe-bg text-slate-800 font-sans">
 
-    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <span class="text-xl font-bold tracking-tighter text-blue-500">AMIR</span>
-            <div class="space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#home" class="hover:text-blue-400 transition">Home</a>
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-                <a href="#contact" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="text-2xl font-bold tracking-tighter text-blue-600">AMIR</span>
+            <div class="space-x-8 text-sm font-medium uppercase tracking-wider text-slate-700">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="bg-blue-600 px-5 py-2 rounded-full text-white hover:bg-blue-700 transition shadow">Contact Me</a>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="min-h-screen flex items-center justify-center pt-16">
-        <div class="text-center px-4">
-            <h2 class="text-blue-500 font-mono mb-4 text-lg">Hi, my name is</h2>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Amir Tamang</h1>
-            <h3 class="text-3xl md:text-5xl font-bold text-slate-400 mb-8 leading-tight">
-                Master of IT student building software solutions
-            </h3>
-            <p class="max-w-xl mx-auto text-slate-400 text-lg mb-10">
-                Currently pursuing my Master's at ACU while developing web applications 
-                and game engines. Focused on clean code and scalable architecture.
+    <header id="home" class="min-h-screen flex items-center justify-center pt-16 bg-white">
+        <div class="text-center px-6">
+            <div class="mb-10 relative">
+                <img src="amir.jpg" alt="Amir Tamang" class="w-36 h-36 rounded-full mx-auto border-4 border-white shadow-lg object-cover">
+                <span class="absolute bottom-0 right-1/2 translate-x-12 translate-y-2 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200">ACU Master's</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-950 mb-6 tracking-tight">Amir Tamang</h1>
+            <h2 class="text-2xl md:text-4xl font-semibold text-slate-600 mb-8 max-w-2xl mx-auto leading-snug">
+                Building efficient software and digital experiences.
+            </h2>
+            <p class="max-w-xl mx-auto text-slate-500 text-lg mb-12">
+                Currently pursuing a Master of Information Technology at Australian Catholic University. Developing real-world skills in web architecture, JavaScript, and systems management.
             </p>
-            <a href="#projects" class="border border-blue-500 text-blue-500 px-8 py-4 rounded font-medium hover:bg-blue-500/10 transition">
-                Check out my work
-            </a>
+            <div class="space-x-4">
+                <a href="#projects" class="bg-blue-600 text-white px-8 py-4 rounded font-semibold hover:bg-blue-700 transition shadow-md">
+                    View My Projects
+                </a>
+                <a href="#about" class="bg-slate-100 text-slate-800 px-8 py-4 rounded font-semibold hover:bg-slate-200 transition">
+                    Learn More <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
         </div>
     </header>
 
-    <section id="projects" class="py-24 bg-slate-800/50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 flex items-center">
-                <span class="text-blue-500 font-mono mr-4 text-xl">01.</span> Projects
-                <div class="h-px bg-slate-700 flex-grow ml-8"></div>
-            </h2>
+    <section id="projects" class="py-24 vibe-bg">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-slate-950 mb-4 tracking-tighter">My Work</h2>
+            <p class="text-lg text-slate-600 mb-16 max-w-xl">
+                A selection of personal and academic projects demonstrating my technical capability.
+            </p>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 hover:-translate-y-2 transition-transform shadow-xl">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fa-regular fa-folder text-4xl text-blue-500"></i>
-                        <div class="space-x-4">
-                            <a href="#" class="text-xl hover:text-blue-500"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" class="text-xl hover:text-blue-500"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex justify-between items-start mb-10">
+                        <i class="fa-solid fa-gamepad text-5xl text-blue-500"></i>
+                        <a href="[Your GitHub Project Link]" class="text-xl text-slate-400 hover:text-blue-600" title="View Source on GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">RPG Adventure Engine</h3>
-                    <p class="text-slate-400 mb-6">
+                    <h3 class="text-2xl font-bold text-slate-950 mb-3 tracking-tight">RPG Adventure Engine</h3>
+                    <p class="text-slate-600 mb-8 text-sm leading-relaxed">
                         A custom 2D game engine built with JavaScript Canvas. Features automated wave management, 
                         dynamic sprite rendering, and mobile-responsive controls.
                     </p>
-                    <div class="flex flex-wrap gap-3 font-mono text-xs text-blue-400">
-                        <span>JavaScript</span>
-                        <span>HTML5 Canvas</span>
-                        <span>Git</span>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-blue-700">
+                        <span class="bg-blue-50 px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-blue-50 px-3 py-1 rounded-full">HTML5 Canvas</span>
+                        <span class="bg-blue-50 px-3 py-1 rounded-full">Git</span>
                     </div>
                 </div>
 
@@ -70,16 +82,18 @@
         </div>
     </section>
 
-    <footer id="contact" class="py-24 text-center">
-        <h2 class="text-blue-500 font-mono mb-4 text-lg">02. What's Next?</h2>
-        <h3 class="text-4xl font-bold text-white mb-6">Get In Touch</h3>
-        <p class="max-w-md mx-auto text-slate-400 mb-10 text-lg">
-            I'm currently looking for entry-level IT opportunities. Whether you have a question or just want to say hi, my inbox is always open!
+    <footer id="contact" class="py-24 bg-white text-center border-t border-slate-100">
+        <h3 class="text-4xl font-extrabold text-slate-950 mb-6 tracking-tighter">Let’s Connect</h3>
+        <p class="max-w-md mx-auto text-slate-600 mb-12 text-lg">
+            I'm currently focused on my ACU studies and looking for entry-level IT roles. I’m always open to discussing new opportunities or collaborating on a project.
         </p>
-        <a href="mailto:amir.yonjan12@gmail.com" class="border-2 border-blue-500 text-blue-500 px-10 py-4 rounded font-bold hover:bg-blue-500/10 transition">
-            Say Hello
-        </a>
-    </footer>
+        <div class="space-x-6 text-3xl text-slate-500 mb-16">
+            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600" title="Email Me"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" class="hover:text-blue-600" title="My LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/amirtamang12" class="hover:text-blue-600" title="My GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="text-slate-400 text-sm">© 2026 Amir Tamang.</p>
+    </footer
 
 </body>
 </html>
