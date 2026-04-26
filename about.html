@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Amir Tamang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/jpeg" href="amir.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>tailwind.config = { darkMode: 'class', }</script>
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark') }
+    </script>
+    <style>
+        .vibe-bg { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+        .dark .vibe-bg { background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="vibe-bg text-slate-800 dark:text-slate-300 font-sans transition-colors duration-300">
+
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">AMIR.</a>
+            <div class="space-x-8 text-sm font-medium uppercase tracking-wider text-slate-700 dark:text-slate-300 items-center hidden md:flex">
+                <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
+                <a href="about.html" class="text-blue-600 dark:text-blue-400 font-bold transition">About Me</a>
+                <a href="skills.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a>
+                <a href="experience.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
+                <a href="projects.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+                
+                <a href="contact.html" class="bg-blue-600 dark:bg-blue-500 px-5 py-2 rounded-full text-white hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow">Contact Me</a>
+                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2.5 transition">
+                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
+                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-24 min-h-screen flex items-center">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-extrabold text-slate-950 dark:text-white mb-8 tracking-tight">About Me</h1>
+            <div class="bg-white dark:bg-slate-800 p-10 md:p-16 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-6 text-left">
+                    I am currently completing my Master of Information Technology at Australian Catholic University. My academic focus centers on Software Engineering, Data Analytics, and building scalable system architectures.
+                </p>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-6 text-left">
+                    Beyond the code, I bring a unique perspective to IT. I thrive at the intersection of technical innovation and operational efficiency. Having built a strong foundation in high-pressure logistics and hospitality environments across Sydney, I have developed a deep resilience and an unwavering commitment to quality assurance.
+                </p>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed text-left">
+                    Whether it is optimizing warehouse data with SAP BW or containerizing a full-stack e-commerce deployment with Docker, I bring dynamic problem-solving skills to every technical challenge I tackle.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact" class="py-24 bg-white dark:bg-slate-900 text-center border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <h3 class="text-4xl font-extrabold text-slate-950 dark:text-white mb-6 tracking-tighter">Let’s Connect</h3>
+        <p class="max-w-md mx-auto text-slate-600 dark:text-slate-400 mb-12 text-lg">
+            I am actively seeking software engineering and data analytics opportunities in Sydney. Let's build something great together.
+        </p>
+        <div class="space-x-6 text-3xl text-slate-500 dark:text-slate-400 mb-16">
+            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang.</p>
+    </footer>
+
+    <script>
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { themeToggleLightIcon.classList.remove('hidden'); } else { themeToggleDarkIcon.classList.remove('hidden'); }
+        var themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') { document.documentElement.classList.add('dark'); localStorage.setItem('color-theme', 'dark'); } 
+                else { document.documentElement.classList.remove('dark'); localStorage.setItem('color-theme', 'light'); }
+            } else {
+                if (document.documentElement.classList.contains('dark')) { document.documentElement.classList.remove('dark'); localStorage.setItem('color-theme', 'light'); } 
+                else { document.documentElement.classList.add('dark'); localStorage.setItem('color-theme', 'dark'); }
+            }
+        });
+    </script>
+</body>
+</html>
