@@ -7,16 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpeg" href="amir.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <script>tailwind.config = { darkMode: 'class', }</script>
     <script>
-        tailwind.config = { darkMode: 'class', }
-    </script>
-    <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark') }
     </script>
     <style>
         .vibe-bg { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
@@ -27,7 +20,7 @@
 
     <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">AMIR</a>
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">Amir Tamang</a>
             <div class="space-x-8 text-sm font-medium uppercase tracking-wider text-slate-700 dark:text-slate-300 items-center hidden md:flex">
                 <a href="index.html" class="text-blue-600 dark:text-blue-400 font-bold transition">Home</a>
                 <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Me</a>
@@ -35,7 +28,7 @@
                 <a href="experience.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
                 <a href="projects.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
                 
-                <a href="contact.html" class="bg-blue-600 dark:bg-blue-500 px-5 py-2 rounded-full text-white hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow">Contact Me</a>
+                <a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact Me</a>
                 <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2.5 transition">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
@@ -44,71 +37,148 @@
         </div>
     </nav>
 
-    <header class="min-h-screen flex items-center justify-center pt-16 bg-white dark:bg-slate-900 transition-colors duration-300">
-        <div class="text-center px-6">
-            <div class="mb-8 relative">
-                <img src="amir.jpg" alt="Amir Tamang" class="w-40 h-40 rounded-full mx-auto border-4 border-white dark:border-slate-800 shadow-xl object-cover transition-colors duration-300">
-                <span class="absolute bottom-2 right-1/2 translate-x-14 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-200 dark:border-green-800 shadow-sm"><i class="fa-solid fa-circle text-[8px] mr-1 mb-[2px]"></i> Open to Work</span>
+    <header class="min-h-[90vh] flex items-center pt-20 pb-12 bg-transparent">
+        <div class="max-w-6xl mx-auto px-6 w-full">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                
+                <div class="order-2 md:order-1 text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
+                        Software Engineer & Data Analyst
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-semibold mb-6">
+                        Building efficient software and digital experiences
+                    </h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Master of Information Technology student specializing in scalable web architecture, Python, data-driven systems, and modern infrastructure. Based in Sydney, Australia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="projects.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg font-semibold transition shadow-md text-center">
+                            View My Projects
+                        </a>
+                        <a href="assets/Amir_Resume.pdf" download class="border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 px-8 py-3.5 rounded-lg font-semibold transition flex items-center justify-center">
+                            <i class="fa-solid fa-file-arrow-down mr-2"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 md:order-2 flex justify-center relative">
+                    <div class="relative rounded-full p-2 bg-gradient-to-tr from-blue-500 to-cyan-400 shadow-2xl">
+                        <img src="amir.jpg" class="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border-4 border-white dark:border-slate-900 object-cover" alt="Amir Tamang">
+                        
+                        <div class="absolute bottom-4 right-0 md:bottom-6 md:right-2 lg:bottom-8 lg:right-4 bg-green-600 text-white font-bold text-sm px-4 py-2 rounded-full border-4 border-white dark:border-slate-900 shadow-lg flex items-center">
+                            <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse"></i> Open to Work
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-slate-950 dark:text-white mb-4 tracking-tight transition-colors duration-300">Amir Tamang</h1>
-            <h2 class="text-xl md:text-2xl font-medium text-blue-600 dark:text-blue-400 mb-6 uppercase tracking-widest transition-colors duration-300">
-                Software Engineer & Data Analyst
-            </h2>
-            <div class="flex items-center justify-center text-slate-500 dark:text-slate-400 mb-8 space-x-2 transition-colors duration-300">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Sydney, NSW, Australia</span>
-            </div>
-            <p class="max-w-xl mx-auto text-slate-500 dark:text-slate-400 text-lg mb-12 leading-relaxed transition-colors duration-300">
-                Master of Information Technology student specializing in scalable web architecture, data-driven systems, and modern infrastructure.
-            </p>
         </div>
     </header>
 
-    <section class="py-24 vibe-bg transition-colors duration-300 border-t border-slate-100 dark:border-slate-800">
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
-                
-                <div class="bg-white dark:bg-slate-800 p-10 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-100 dark:bg-slate-700 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-briefcase text-2xl text-blue-600 dark:text-blue-400"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-slate-950 dark:text-white mb-4">Professional Experience</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                        A diverse professional background blending IT development, graphic design, and operational logistics using enterprise systems like SAP BW.
-                    </p>
-                    <a href="experience.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
-                        View Full Experience <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-
-                <div class="bg-white dark:bg-slate-800 p-10 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-100 dark:bg-slate-700 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-code text-2xl text-blue-600 dark:text-blue-400"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-slate-950 dark:text-white mb-4">Technical Projects</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                        Explore my system architectures, including containerized e-commerce platforms, YOLOv3 object detection scripts, and Neo4j data modeling.
-                    </p>
-                    <a href="projects.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
-                        Explore Portfolio <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">About Me</h2>
+            <div class="max-w-3xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                <p>I'm a passionate IT student at Australian Catholic University with a strong background in combining technical innovation with operational efficiency. I specialize in Web Development, Data Analytics, and creating scalable solutions that solve real-world problems.</p>
+                <br>
+                <p>Having built resilience in high-pressure logistics and hospitality roles, I bring strict attention to quality assurance and dynamic problem-solving skills to my engineering work.</p>
             </div>
+            <a href="about.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
+                Learn more about me <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
-    <footer id="contact" class="py-24 bg-white dark:bg-slate-900 text-center border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-        <h3 class="text-4xl font-extrabold text-slate-950 dark:text-white mb-6 tracking-tighter transition-colors duration-300">Let’s Connect</h3>
-        <p class="max-w-md mx-auto text-slate-600 dark:text-slate-400 mb-12 text-lg transition-colors duration-300">
-            I am actively seeking software engineering and data analytics opportunities in Sydney. Let's build something great together.
-        </p>
-        <div class="space-x-6 text-3xl text-slate-500 dark:text-slate-400 mb-16 transition-colors duration-300">
-            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="Email Me"><i class="fa-regular fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="My LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="My GitHub"><i class="fa-brands fa-github"></i></a>
+    <section class="py-20 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Core Expertise</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-10">Technologies and skills I work with</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white">Web Dev</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">JS, HTML/CSS, PHP</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white">Data Analytics</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Python, Pandas, Neo4j</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+                    <div class="text-4xl mb-4">🐳</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white">Systems</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Docker, Git, Linux</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white">Enterprise</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SAP BW, Logistics</p>
+                </div>
+            </div>
+            
+            <a href="skills.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
+                View All Skills <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
         </div>
-        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang.</p>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Featured Projects</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-10">Some of my recent work and achievements</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col hover:border-blue-300 transition">
+                    <div class="text-4xl mb-4">🐳</div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Containerized Architecture</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm flex-grow">Designed and deployed a full-stack e-commerce application utilizing PHP and MySQL with Docker Compose.</p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6">
+                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Docker</span>
+                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">PHP</span>
+                    </div>
+                    <a href="projects.html" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Read Case Study</a>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col hover:border-blue-300 transition">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">YOLOv3 Object Detection</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm flex-grow">A computer vision script capable of analyzing video input to detect, classify, and track objects in real-time.</p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6">
+                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Python</span>
+                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">OpenCV</span>
+                    </div>
+                    <a href="https://github.com/amirtamang12/Object-Detection-Video" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline flex items-center"><i class="fa-brands fa-github mr-2"></i> Source Code</a>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col hover:border-blue-300 transition">
+                    <div class="text-4xl mb-4">🗄️</div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">EPL Graph Analysis</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm flex-grow">Engineered a NoSQL Graph Database using Neo4j to analyze complex statistical relationships via Cypher queries.</p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6">
+                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Neo4j</span>
+                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Cypher</span>
+                    </div>
+                    <a href="https://github.com/amirtamang12/Academic-Research-Reports" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline flex items-center"><i class="fa-solid fa-file-pdf mr-2"></i> View Report</a>
+                </div>
+            </div>
+
+            <a href="projects.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
+                View All Projects <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-slate-50 dark:bg-slate-900 text-center border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Amir Tamang</h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-6">Software Engineer & Data Analyst <br> Building intelligent systems in Sydney, Australia.</p>
+        
+        <div class="flex justify-center space-x-6 text-2xl text-slate-500 dark:text-slate-400 mb-8">
+            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        
+        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang. All rights reserved.</p>
     </footer>
 
     <script>

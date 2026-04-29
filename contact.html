@@ -20,7 +20,7 @@
 
     <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">AMIR</a>
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">Amir Tamang</a>
             <div class="space-x-8 text-sm font-medium uppercase tracking-wider text-slate-700 dark:text-slate-300 items-center hidden md:flex">
                 <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
                 <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Me</a>
@@ -28,7 +28,7 @@
                 <a href="experience.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
                 <a href="projects.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
                 
-                <a href="contact.html" class="bg-blue-700 dark:bg-blue-600 px-5 py-2 rounded-full text-white shadow-inner">Contact Me</a>
+                <a href="contact.html" class="text-blue-600 dark:text-blue-400 font-bold transition">Contact Me</a>
                 <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2.5 transition">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
@@ -37,91 +37,205 @@
         </div>
     </nav>
 
-    <div class="pt-32 pb-24 min-h-screen">
-        <div class="max-w-5xl mx-auto px-6">
-            <h1 class="text-5xl font-extrabold text-slate-950 dark:text-white mb-6 tracking-tight text-center">Let's Get In Touch</h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 mb-16 max-w-2xl mx-auto text-center">
-                Whether you have a role in mind, a project to collaborate on, or just want to talk tech—I'd love to hear from you.
+    <header class="pt-32 pb-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">Get In Touch</h1>
+            <h2 class="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-semibold mb-6">Let's Connect & Collaborate</h2>
+            <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                I'm always interested in new opportunities, collaborations, and discussions about software engineering, data analytics, and enterprise technology. Feel free to reach out!
             </p>
-            
-            <div class="grid md:grid-cols-2 gap-12 bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-950 dark:text-white mb-6">Send a Message</h3>
-                    <form action="#" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition" placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition" placeholder="john@example.com">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition resize-none" placeholder="How can we work together?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-bold py-4 rounded-xl transition shadow-md">
-                            Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
-                </div>
+        </div>
+    </header>
 
-                <div class="flex flex-col justify-center space-y-10 border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-10 md:pt-0 md:pl-12">
+    <div class="max-w-6xl mx-auto px-6 pb-24 space-y-16">
+
+        <div class="grid md:grid-cols-2 gap-12">
+            
+            <section>
+                <div class="mb-6 flex items-center">
+                    <span class="text-3xl mr-3">💬</span>
                     <div>
-                        <h4 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Location</h4>
-                        <div class="flex items-center text-lg text-slate-800 dark:text-slate-200 font-medium">
-                            <div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            Sydney, NSW, Australia
-                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Contact Information</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm">Multiple ways to reach me</p>
                     </div>
-                    
-                    <div>
-                        <h4 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Email</h4>
-                        <a href="mailto:amir.yonjan12@gmail.com" class="flex items-center text-lg text-slate-800 dark:text-slate-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">
-                            <div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4">
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between hover:shadow-md transition">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 text-xl">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
-                            amir.yonjan12@gmail.com
-                        </a>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Email</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">amir.yonjan12@gmail.com</p>
+                            </div>
+                        </div>
+                        <a href="mailto:amir.yonjan12@gmail.com" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Send Email</a>
                     </div>
 
-                    <div>
-                        <h4 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Social Profiles</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 transition shadow-sm text-xl">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/amirtamang12" target="_blank" class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-800 hover:text-white dark:hover:bg-slate-600 transition shadow-sm text-xl">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Location</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Sydney, NSW, Australia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Response Time</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Usually within 24 hours</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-            </div>
+            <section>
+                <div class="mb-6 flex items-center">
+                    <span class="text-3xl mr-3">🌐</span>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Other Ways to Connect</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm">Follow me on social media and professional networks</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition hover:border-blue-200 dark:hover:border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <div class="text-3xl mr-4 text-slate-800 dark:text-white"><i class="fa-brands fa-github"></i></div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">GitHub</h4>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                            Check out my open source projects, game engines, computer vision scripts, and code architectures.
+                        </p>
+                        <a href="https://github.com/amirtamang12" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Visit GitHub →</a>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition hover:border-blue-200 dark:hover:border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <div class="text-3xl mr-4 text-[#0077b5] dark:text-[#0a66c2]"><i class="fa-brands fa-linkedin"></i></div>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">LinkedIn</h4>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                            Connect with me professionally, view my full experience, and endorse my skills.
+                        </p>
+                        <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Connect on LinkedIn →</a>
+                    </div>
+                </div>
+            </section>
+
         </div>
+
+        <section class="pt-8 border-t border-slate-200 dark:border-slate-800">
+            <div class="mb-10 text-center md:text-left">
+                <h3 class="text-3xl font-bold text-slate-900 dark:text-white">What I Can Help With</h3>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">Areas where I can provide value and expertise</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div class="text-3xl mb-4">💻</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Web Architecture</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Building custom full-stack solutions, utilizing frameworks like PHP, Laravel, and ASP.NET Core for dynamic user experiences.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Data Analytics & Modeling</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Extracting insights using Python and Pandas, and architecting complex NoSQL Graph Databases using Neo4j and Cypher.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div class="text-3xl mb-4">🐳</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Systems & Docker</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Setting up containerized environments, ensuring seamless deployment pipelines, and managing robust version control.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div class="text-3xl mb-4">🤖</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Computer Vision</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Implementing pre-trained YOLOv3 models and OpenCV scripts for real-time video object detection and classification.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div class="text-3xl mb-4">📦</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Enterprise Logistics</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Integrating technical systems with real-world workflows, utilizing tools like SAP BW to optimize supply chain data.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                    <div class="text-3xl mb-4">📝</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Technical Documentation</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Drafting comprehensive architecture reports, system analyses, and research documentation for complex software projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <footer class="py-8 bg-white dark:bg-slate-900 text-center border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang. Built with Tailwind CSS.</p>
+    <footer class="py-12 bg-slate-50 dark:bg-slate-900 text-center border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Amir Tamang</h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-6">Software Engineer & Data Analyst <br> Building intelligent systems in Sydney, Australia.</p>
+        
+        <div class="flex justify-center space-x-6 text-2xl text-slate-500 dark:text-slate-400 mb-8">
+            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        
+        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang. All rights reserved.</p>
     </footer>
 
     <script>
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { themeToggleLightIcon.classList.remove('hidden'); } else { themeToggleDarkIcon.classList.remove('hidden'); }
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
         var themeToggleBtn = document.getElementById('theme-toggle');
         themeToggleBtn.addEventListener('click', function() {
-            themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
             if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') { document.documentElement.classList.add('dark'); localStorage.setItem('color-theme', 'dark'); } 
-                else { document.documentElement.classList.remove('dark'); localStorage.setItem('color-theme', 'light'); }
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
             } else {
-                if (document.documentElement.classList.contains('dark')) { document.documentElement.classList.remove('dark'); localStorage.setItem('color-theme', 'light'); } 
-                else { document.documentElement.classList.add('dark'); localStorage.setItem('color-theme', 'dark'); }
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
             }
         });
     </script>
