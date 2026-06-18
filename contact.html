@@ -1,35 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me | Amir Tamang</title>
+    <title>Contact | Amir Tamang - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpeg" href="amir.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>tailwind.config = { darkMode: 'class', }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark') }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <style>
-        .vibe-bg { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
-        .dark .vibe-bg { background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+
+        .bg-grid-slate-900 {
+            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .bg-grid-slate-100 {
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
     </style>
 </head>
-<body class="vibe-bg text-slate-800 dark:text-slate-300 font-sans transition-colors duration-300">
 
-    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">Amir Tamang</a>
-            <div class="space-x-8 text-sm font-medium uppercase tracking-wider text-slate-700 dark:text-slate-300 items-center hidden md:flex">
-                <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
-                <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Me</a>
-                <a href="skills.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a>
-                <a href="experience.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
-                <a href="projects.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
-                
-                <a href="contact.html" class="text-blue-600 dark:text-blue-400 font-bold transition">Contact Me</a>
-                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2.5 transition">
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+
+    <div
+        class="fixed inset-0 z-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.2))] pointer-events-none">
+    </div>
+
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html"
+                class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition">
+                <div
+                    class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">
+                    AT</div>
+                <span class="hidden sm:block">Amir Tamang</span>
+            </a>
+            <div
+                class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
+                <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition">/home</a>
+                <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition">/about_me</a>
+                <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition">/skills</a>
+                <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition">/experience</a>
+                <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition">/projects</a>
+                <a href="contact.html" class="text-brand-600 dark:text-brand-500 font-semibold">/contact</a>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                <button id="theme-toggle" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition"
+                    title="Toggle Theme">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
                 </button>
@@ -37,207 +93,177 @@
         </div>
     </nav>
 
-    <header class="pt-32 pb-12">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">Get In Touch</h1>
-            <h2 class="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-semibold mb-6">Let's Connect & Collaborate</h2>
-            <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                I'm always interested in new opportunities, collaborations, and discussions about software engineering, data analytics, and enterprise technology. Feel free to reach out!
-            </p>
-        </div>
-    </header>
+    <main class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 flex-grow w-full">
 
-    <div class="max-w-6xl mx-auto px-6 pb-24 space-y-16">
-
-        <div class="grid md:grid-cols-2 gap-12">
-            
-            <section>
-                <div class="mb-6 flex items-center">
-                    <span class="text-3xl mr-3">💬</span>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Contact Information</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm">Multiple ways to reach me</p>
-                    </div>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between hover:shadow-md transition">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 text-xl">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 dark:text-white">Email</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">amir.yonjan12@gmail.com</p>
-                            </div>
-                        </div>
-                        <a href="mailto:amir.yonjan12@gmail.com" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Send Email</a>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 text-xl">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 dark:text-white">Location</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Sydney, NSW, Australia</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 text-xl">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 dark:text-white">Response Time</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Usually within 24 hours</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="mb-6 flex items-center">
-                    <span class="text-3xl mr-3">🌐</span>
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Other Ways to Connect</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm">Follow me on social media and professional networks</p>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition hover:border-blue-200 dark:hover:border-blue-500">
-                        <div class="flex items-center mb-3">
-                            <div class="text-3xl mr-4 text-slate-800 dark:text-white"><i class="fa-brands fa-github"></i></div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">GitHub</h4>
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                            Check out my open source projects, game engines, computer vision scripts, and code architectures.
-                        </p>
-                        <a href="https://github.com/amirtamang12" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Visit GitHub →</a>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition hover:border-blue-200 dark:hover:border-blue-500">
-                        <div class="flex items-center mb-3">
-                            <div class="text-3xl mr-4 text-[#0077b5] dark:text-[#0a66c2]"><i class="fa-brands fa-linkedin"></i></div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">LinkedIn</h4>
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                            Connect with me professionally, view my full experience, and endorse my skills.
-                        </p>
-                        <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Connect on LinkedIn →</a>
-                    </div>
-                </div>
-            </section>
-
+        <div class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-8">
+            Contact // Get_In_Touch
         </div>
 
-        <section class="pt-8 border-t border-slate-200 dark:border-slate-800">
-            <div class="mb-10 text-center md:text-left">
-                <h3 class="text-3xl font-bold text-slate-900 dark:text-white">What I Can Help With</h3>
-                <p class="text-slate-600 dark:text-slate-400 mt-2">Areas where I can provide value and expertise</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-16">
+            Let's <br>
+            <span class="text-slate-500 dark:text-slate-400">Connect.</span>
+        </h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            <div class="space-y-10">
+                <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed border-l-2 border-brand-500 pl-4">
+                    I am currently exploring new opportunities across Sydney and Adelaide, focusing on the intersection
+                    of robust full-stack .NET development and cutting-edge Artificial Intelligence. I actively leverage
+                    AI tools and machine learning pipelines to accelerate development, optimize system architecture, and
+                    build intelligent, future-proof software. Whether you have a project proposal or want to discuss the
+                    future of AI in enterprise tech, my inbox is always open.
+                </p>
+
+                <div
+                    class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </div>
+                        <span class="font-semibold text-sm">Current Status</span>
+                    </div>
+                    <span class="text-xs text-slate-500 font-mono font-bold tracking-wide">OPEN TO OPPORTUNITIES</span>
+                </div>
+
+                <div class="space-y-4 font-mono text-sm">
+
+                    <a href="mailto:amir.yonjan12@gmail.com"
+                        class="group flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 transition rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <i
+                                class="fa-solid fa-envelope text-slate-400 group-hover:text-brand-500 text-lg transition"></i>
+                            <span
+                                class="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition">amir.yonjan12@gmail.com</span>
+                        </div>
+                        <i
+                            class="fa-solid fa-arrow-right text-brand-600 dark:text-brand-500 opacity-0 group-hover:opacity-100 transition -translate-x-2 group-hover:translate-x-0"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank"
+                        class="group flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 transition rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <i
+                                class="fa-brands fa-linkedin text-slate-400 group-hover:text-brand-500 text-lg transition"></i>
+                            <span
+                                class="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition">linkedin.com/in/amir-tamang</span>
+                        </div>
+                        <i
+                            class="fa-solid fa-arrow-right text-brand-600 dark:text-brand-500 opacity-0 group-hover:opacity-100 transition -translate-x-2 group-hover:translate-x-0"></i>
+                    </a>
+
+                    <a href="https://github.com/amirtamang12" target="_blank"
+                        class="group flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 transition rounded-sm">
+                        <div class="flex items-center gap-4">
+                            <i
+                                class="fa-brands fa-github text-slate-400 group-hover:text-brand-500 text-lg transition"></i>
+                            <span
+                                class="text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition">github.com/amirtamang12</span>
+                        </div>
+                        <i
+                            class="fa-solid fa-arrow-right text-brand-600 dark:text-brand-500 opacity-0 group-hover:opacity-100 transition -translate-x-2 group-hover:translate-x-0"></i>
+                    </a>
+
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="text-3xl mb-4">💻</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Web Architecture</h4>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Building custom full-stack solutions, utilizing frameworks like PHP, Laravel, and ASP.NET Core for dynamic user experiences.
-                    </p>
-                </div>
+            <div
+                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-sm shadow-xl relative">
+                <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
+                <h3 class="text-xl font-bold mb-6 flex items-center justify-between">
+                    <span>Send a Message</span>
+                    <i class="fa-regular fa-paper-plane text-slate-400"></i>
+                </h3>
 
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="text-3xl mb-4">📊</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Data Analytics & Modeling</h4>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Extracting insights using Python and Pandas, and architecting complex NoSQL Graph Databases using Neo4j and Cypher.
-                    </p>
-                </div>
+                <form action="https://formspree.io/f/mgobbbbw" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="name"
+                                class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Your
+                                Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-sm px-4 py-3 text-slate-900 dark:text-white transition outline-none font-sans"
+                                placeholder="Enter your name here...">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="email"
+                                class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Email
+                                Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-sm px-4 py-3 text-slate-900 dark:text-white transition outline-none font-sans"
+                                placeholder="Enter your email here...">
+                        </div>
+                    </div>
 
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="text-3xl mb-4">🐳</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Systems & Docker</h4>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Setting up containerized environments, ensuring seamless deployment pipelines, and managing robust version control.
-                    </p>
-                </div>
+                    <div class="space-y-2">
+                        <label for="subject"
+                            class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Subject</label>
+                        <input type="text" id="subject" name="subject" required
+                            class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-sm px-4 py-3 text-slate-900 dark:text-white transition outline-none font-sans"
+                            placeholder="Job Opportunity / Project Collaboration">
+                    </div>
 
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="text-3xl mb-4">🤖</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Computer Vision</h4>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Implementing pre-trained YOLOv3 models and OpenCV scripts for real-time video object detection and classification.
-                    </p>
-                </div>
+                    <div class="space-y-2">
+                        <label for="message"
+                            class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-sm px-4 py-3 text-slate-900 dark:text-white transition outline-none font-sans resize-none"
+                            placeholder="Enter your message here..."></textarea>
+                    </div>
 
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="text-3xl mb-4">📦</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Enterprise Logistics</h4>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Integrating technical systems with real-world workflows, utilizing tools like SAP BW to optimize supply chain data.
-                    </p>
-                </div>
-
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="text-3xl mb-4">📝</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Technical Documentation</h4>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Drafting comprehensive architecture reports, system analyses, and research documentation for complex software projects.
-                    </p>
-                </div>
+                    <button type="submit"
+                        class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold uppercase tracking-widest py-4 rounded-sm transition flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20">
+                        Send Message
+                    </button>
+                </form>
             </div>
-        </section>
 
-    </div>
-
-    <footer class="py-12 bg-slate-50 dark:bg-slate-900 text-center border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Amir Tamang</h2>
-        <p class="text-slate-600 dark:text-slate-400 mb-6">Software Engineer & Data Analyst <br> Building intelligent systems in Sydney, Australia.</p>
-        
-        <div class="flex justify-center space-x-6 text-2xl text-slate-500 dark:text-slate-400 mb-8">
-            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
-        
-        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang. All rights reserved.</p>
+
+    </main>
+
+    <footer
+        class="py-8 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-center relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm font-mono">© 2026 Amir Tamang. sys.exit(0)</p>
+            <div class="flex gap-6 text-xl text-slate-400">
+                <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-brand-500 transition"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank"
+                    class="hover:text-brand-500 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-brand-500 transition"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script>
-        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
         } else {
-            themeToggleDarkIcon.classList.remove('hidden');
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
         }
-        var themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function() {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
+
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
             }
         });
     </script>
 </body>
+
 </html>

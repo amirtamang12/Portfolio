@@ -1,35 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Tamang - Software Engineer & Data Analyst | Sydney, Australia</title>
+    <title>Amir Tamang | Full-Stack Engineer | AI & Data Systems</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpeg" href="amir.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>tailwind.config = { darkMode: 'class', }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark') }
+        tailwind.config = { 
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <style>
-        .vibe-bg { background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
-        .dark .vibe-bg { background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+        
+        .bg-grid-slate-900 {
+            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .bg-grid-slate-100 {
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
     </style>
 </head>
-<body class="vibe-bg text-slate-800 dark:text-slate-300 font-sans transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
 
-    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500 hover:opacity-80 transition">Amir Tamang</a>
-            <div class="space-x-8 text-sm font-medium uppercase tracking-wider text-slate-700 dark:text-slate-300 items-center hidden md:flex">
-                <a href="index.html" class="text-blue-600 dark:text-blue-400 font-bold transition">Home</a>
-                <a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Me</a>
-                <a href="skills.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a>
-                <a href="experience.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
-                <a href="projects.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
-                
-                <a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact Me</a>
-                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2.5 transition">
+    <div class="fixed inset-0 z-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.2))] pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition">
+                <div class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">AT</div>
+                <span class="hidden sm:block">Amir Tamang</span>
+            </a>
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
+                <a href="index.html" class="text-brand-600 dark:text-brand-500 font-semibold">/home</a>
+                <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition">/about_me</a>
+                <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition">/skills</a>
+                <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition">/experience</a>
+                <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition">/projects</a>
+                <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition">/contact</a>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                <button id="theme-toggle" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
                     <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
                     <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
                 </button>
@@ -37,178 +68,201 @@
         </div>
     </nav>
 
-    <header class="min-h-[90vh] flex items-center pt-20 pb-12 bg-transparent">
-        <div class="max-w-6xl mx-auto px-6 w-full">
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <main class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 flex-grow w-full">
+        
+        <header id="about" class="flex flex-col md:flex-row gap-12 items-center mb-24 mt-10 scroll-mt-32">
+            
+            <div class="flex-1 space-y-6">
+                <div class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase flex items-center gap-2">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    SYS.STATUS: ONLINE // SYDNEY, AU
+                </div>
                 
-                <div class="order-2 md:order-1 text-center md:text-left">
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
-                        Software Engineer & Data Analyst
-                    </h1>
-                    <h2 class="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-semibold mb-6">
-                        Building efficient software and digital experiences
-                    </h2>
-                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                        Master of Information Technology student specializing in scalable web architecture, Python, data-driven systems, and modern infrastructure. Based in Sydney, Australia.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="projects.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg font-semibold transition shadow-md text-center">
-                            View My Projects
-                        </a>
-                        <a href="assets/Amir_Resume.pdf" download class="border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 px-8 py-3.5 rounded-lg font-semibold transition flex items-center justify-center">
-                            <i class="fa-solid fa-file-arrow-down mr-2"></i> Download CV
-                        </a>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-none">
+                    Full-Stack Engineer /<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-cyan-400">AI & Data Systems</span>
+                </h1>
+                
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed border-l-2 border-brand-500 pl-4">
+                    Master of IT Candidate at Australian Catholic University, blending technical innovation with operational resilience to architect intelligent, scalable systems. I specialize in Artificial Intelligence, full-stack development, and data-driven pipelines. Having built resilience in high-pressure logistics roles, I bring strict attention to quality assurance and dynamic problem-solving to my machine learning and engineering work.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4 font-mono text-sm">
+                    <a href="about.html" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-sm transition flex items-center gap-2 shadow-lg shadow-brand-500/20">
+                        [ Learn More About Me ] <i class="fa-solid fa-user-astronaut"></i>
+                    </a>
+                    <a href="assets/Amir_Resume.pdf" download class="px-6 py-3 bg-transparent text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-medium transition flex items-center gap-2 border border-slate-300 dark:border-slate-700 hover:border-brand-500 rounded-sm">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-64 h-64 md:w-80 md:h-80 relative group flex-shrink-0">
+                <div class="absolute inset-0 border-2 border-brand-500 translate-x-4 translate-y-4 rounded-sm transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                <img src="amir.jpg" alt="Amir Tamang" class="absolute inset-0 w-full h-full object-cover rounded-sm border border-slate-200 dark:border-slate-700 shadow-xl transition-transform duration-500 group-hover:scale-[1.02]">
+            </div>
+        </header>
+
+        <section id="expertise" class="scroll-mt-32 mb-24 border-t border-slate-200 dark:border-slate-800 pt-16">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <div class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-2">
+                        SYS.MODULES // Capabilities
                     </div>
+                    <h2 class="text-3xl font-bold">Core Expertise</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Technologies and skills I work with</p>
+                </div>
+                <a href="skills.html" class="text-brand-600 dark:text-brand-500 font-mono text-sm hover:underline hidden sm:flex items-center gap-2">
+                    View All Skills <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-brand-500 transition group">
+                    <i class="fa-solid fa-code text-2xl text-brand-500 mb-4 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="font-bold text-lg mb-2">Web Dev</h3>
+                    <p class="text-sm font-mono text-slate-500">JS, HTML/CSS, PHP, .NET</p>
                 </div>
 
-                <div class="order-1 md:order-2 flex justify-center relative">
-                    <div class="relative rounded-full p-2 bg-gradient-to-tr from-blue-500 to-cyan-400 shadow-2xl">
-                        <img src="amir.jpg" class="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border-4 border-white dark:border-slate-900 object-cover" alt="Amir Tamang">
-                        
-                        <div class="absolute bottom-4 right-0 md:bottom-6 md:right-2 lg:bottom-8 lg:right-4 bg-green-600 text-white font-bold text-sm px-4 py-2 rounded-full border-4 border-white dark:border-slate-900 shadow-lg flex items-center">
-                            <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse"></i> Open to Work
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-purple-500 transition group">
+                    <i class="fa-solid fa-chart-line text-2xl text-purple-500 mb-4 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="font-bold text-lg mb-2">Data Analytics & AI</h3>
+                    <p class="text-sm font-mono text-slate-500">Python, Pandas, Neo4j</p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-cyan-500 transition group">
+                    <i class="fa-brands fa-docker text-2xl text-cyan-500 mb-4 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="font-bold text-lg mb-2">Systems</h3>
+                    <p class="text-sm font-mono text-slate-500">Docker, Git, Linux</p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-emerald-500 transition group">
+                    <i class="fa-solid fa-building-columns text-2xl text-emerald-500 mb-4 block group-hover:scale-110 transition-transform origin-left"></i>
+                    <h3 class="font-bold text-lg mb-2">Enterprise</h3>
+                    <p class="text-sm font-mono text-slate-500">SAP BW, Logistics Ops</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 sm:hidden text-center">
+                <a href="skills.html" class="text-brand-600 dark:text-brand-500 font-mono text-sm hover:underline">View All Skills <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="projects" class="scroll-mt-32 mb-16 border-t border-slate-200 dark:border-slate-800 pt-16">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <div class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-2">
+                        SYS.DIR // Repositories
+                    </div>
+                    <h2 class="text-3xl font-bold">Featured Projects</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Some of my recent work and achievements</p>
+                </div>
+                <a href="projects.html" class="text-brand-600 dark:text-brand-500 font-mono text-sm hover:underline hidden sm:flex items-center gap-2">
+                    View All Projects <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans">
+                
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 hover:border-cyan-500 transition group flex flex-col justify-between rounded-sm">
+                    <div>
+                        <i class="fa-brands fa-docker text-3xl text-slate-400 group-hover:text-cyan-500 transition mb-6 block"></i>
+                        <h3 class="text-xl font-bold mb-3">Containerized Architecture</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Designed and deployed a full-stack e-commerce application utilizing PHP and MySQL with Docker Compose.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs mb-6">
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400">Docker</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">PHP</span>
                         </div>
+                        <a href="https://github.com/amirtamang12/Dockerized-ECommerce-Pets-Platform" target="_blank" class="font-mono text-xs font-bold text-cyan-600 dark:text-cyan-500 uppercase tracking-wide flex items-center justify-between group-hover:text-cyan-700 dark:group-hover:text-cyan-400">
+                            <span>Read Case Study</span>
+                            <i class="fa-solid fa-arrow-right -translate-x-2 group-hover:translate-x-0 transition"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
 
-    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">About Me</h2>
-            <div class="max-w-3xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                <p>I'm a passionate IT student at Australian Catholic University with a strong background in combining technical innovation with operational efficiency. I specialize in Web Development, Data Analytics, and creating scalable solutions that solve real-world problems.</p>
-                <br>
-                <p>Having built resilience in high-pressure logistics and hospitality roles, I bring strict attention to quality assurance and dynamic problem-solving skills to my engineering work.</p>
-            </div>
-            <a href="about.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
-                Learn more about me <i class="fa-solid fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-    </section>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 hover:border-brand-500 transition group flex flex-col justify-between rounded-sm">
+                    <div>
+                        <i class="fa-solid fa-robot text-3xl text-slate-400 group-hover:text-brand-500 transition mb-6 block"></i>
+                        <h3 class="text-xl font-bold mb-3">YOLOv3 Object Detection</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">A computer vision script capable of analyzing video input to detect, classify, and track objects in real-time.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs mb-6">
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-brand-600 dark:text-brand-400">Python</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">OpenCV</span>
+                        </div>
+                        <a href="https://github.com/amirtamang12/YOLOv5-Deep-Learning-Object-Detection" target="_blank" class="font-mono text-xs font-bold text-brand-600 dark:text-brand-500 uppercase tracking-wide flex items-center justify-between group-hover:text-brand-700 dark:group-hover:text-brand-400">
+                            <span>Source Code</span>
+                            <i class="fa-brands fa-github -translate-x-2 group-hover:translate-x-0 transition text-sm"></i>
+                        </a>
+                    </div>
+                </div>
 
-    <section class="py-20 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Core Expertise</h2>
-            <p class="text-slate-600 dark:text-slate-400 mb-10">Technologies and skills I work with</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h3 class="font-bold text-slate-900 dark:text-white">Web Dev</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">JS, HTML/CSS, PHP</p>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 hover:border-purple-500 transition group flex flex-col justify-between rounded-sm">
+                    <div>
+                        <i class="fa-solid fa-circle-nodes text-3xl text-slate-400 group-hover:text-purple-500 transition mb-6 block"></i>
+                        <h3 class="text-xl font-bold mb-3">EPL Graph Analysis</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Engineered a NoSQL Graph Database using Neo4j to analyze complex statistical relationships via Cypher queries.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs mb-6">
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-purple-600 dark:text-purple-400">Neo4j</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">Cypher</span>
+                        </div>
+                        <a href="projects.html" class="font-mono text-xs font-bold text-purple-600 dark:text-purple-500 uppercase tracking-wide flex items-center justify-between group-hover:text-purple-700 dark:group-hover:text-purple-400">
+                            <span>View Report</span>
+                            <i class="fa-solid fa-file-lines -translate-x-2 group-hover:translate-x-0 transition text-sm"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="font-bold text-slate-900 dark:text-white">Data Analytics</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Python, Pandas, Neo4j</p>
-                </div>
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
-                    <div class="text-4xl mb-4">🐳</div>
-                    <h3 class="font-bold text-slate-900 dark:text-white">Systems</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Docker, Git, Linux</p>
-                </div>
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h3 class="font-bold text-slate-900 dark:text-white">Enterprise</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SAP BW, Logistics</p>
-                </div>
+
             </div>
             
-            <a href="skills.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
-                View All Skills <i class="fa-solid fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-    </section>
-
-    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Featured Projects</h2>
-            <p class="text-slate-600 dark:text-slate-400 mb-10">Some of my recent work and achievements</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 mb-10">
-                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col hover:border-blue-300 transition">
-                    <div class="text-4xl mb-4">🐳</div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Containerized Architecture</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm flex-grow">Designed and deployed a full-stack e-commerce application utilizing PHP and MySQL with Docker Compose.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6">
-                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Docker</span>
-                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">PHP</span>
-                    </div>
-                    <a href="projects.html" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Read Case Study</a>
-                </div>
-
-                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col hover:border-blue-300 transition">
-                    <div class="text-4xl mb-4">🤖</div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">YOLOv3 Object Detection</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm flex-grow">A computer vision script capable of analyzing video input to detect, classify, and track objects in real-time.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6">
-                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Python</span>
-                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">OpenCV</span>
-                    </div>
-                    <a href="https://github.com/amirtamang12/Object-Detection-Video" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline flex items-center"><i class="fa-brands fa-github mr-2"></i> Source Code</a>
-                </div>
-
-                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col hover:border-blue-300 transition">
-                    <div class="text-4xl mb-4">🗄️</div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">EPL Graph Analysis</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm flex-grow">Engineered a NoSQL Graph Database using Neo4j to analyze complex statistical relationships via Cypher queries.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6">
-                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Neo4j</span>
-                        <span class="bg-white dark:bg-slate-700 px-3 py-1 rounded border dark:border-slate-600">Cypher</span>
-                    </div>
-                    <a href="https://github.com/amirtamang12/Academic-Research-Reports" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline flex items-center"><i class="fa-solid fa-file-pdf mr-2"></i> View Report</a>
-                </div>
+            <div class="mt-6 sm:hidden text-center">
+                <a href="projects.html" class="text-brand-600 dark:text-brand-500 font-mono text-sm hover:underline">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
             </div>
+        </section>
 
-            <a href="projects.html" class="inline-flex items-center font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition">
-                View All Projects <i class="fa-solid fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-    </section>
+    </main>
 
-    <footer class="py-12 bg-slate-50 dark:bg-slate-900 text-center border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Amir Tamang</h2>
-        <p class="text-slate-600 dark:text-slate-400 mb-6">Software Engineer & Data Analyst <br> Building intelligent systems in Sydney, Australia.</p>
-        
-        <div class="flex justify-center space-x-6 text-2xl text-slate-500 dark:text-slate-400 mb-8">
-            <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-center relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm font-mono">© 2026 Amir Tamang. sys.exit(0)</p>
+            <div class="flex gap-6 text-xl text-slate-400">
+                <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-brand-500 transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
-        
-        <p class="text-slate-400 dark:text-slate-500 text-sm">© 2026 Amir Tamang. All rights reserved.</p>
     </footer>
 
     <script>
-        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
         } else {
-            themeToggleDarkIcon.classList.remove('hidden');
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
         }
-        var themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function() {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
+
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
             }
         });
     </script>
