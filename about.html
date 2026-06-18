@@ -12,9 +12,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -70,41 +68,52 @@
     </style>
 </head>
 
-<body
-    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
 
-    <div
-        class="fixed inset-0 z-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.2))] pointer-events-none">
-    </div>
+    <div class="fixed inset-0 z-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.2))] pointer-events-none"></div>
 
-    <nav
-        class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-
-            <a href="index.html"
-                class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition">
-                <div
-                    class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">
-                    AT</div>
+            
+            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition relative z-50">
+                <div class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">AT</div>
                 <span class="hidden sm:block">Amir Tamang</span>
             </a>
 
-            <div
-                class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
                 <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition">/home</a>
                 <a href="about.html" class="text-brand-600 dark:text-brand-500 font-semibold">/about_me</a>
                 <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition">/skills</a>
                 <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition">/experience</a>
                 <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition">/projects</a>
                 <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition">/contact</a>
-
                 <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
-
-                <button id="theme-toggle" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition"
-                    title="Toggle Theme">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
                 </button>
+            </div>
+
+            <div class="flex items-center gap-4 md:hidden relative z-50">
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition text-lg" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
+                </button>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars w-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-xl">
+            <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition block">/home</a>
+                <a href="about.html" class="text-brand-600 dark:text-brand-500 font-semibold block">/about_me</a>
+                <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition block">/skills</a>
+                <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition block">/experience</a>
+                <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition block">/projects</a>
+                <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition block">/contact</a>
             </div>
         </div>
     </nav>
@@ -125,33 +134,22 @@
 
                 <div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                     <p class="font-medium text-slate-800 dark:text-slate-300">
-                        I am a Software Engineer and Data Analyst blending AI-driven innovation with operational
-                        resilience to build intelligent, scalable systems.
+                        I am a Software Engineer and Data Analyst blending AI-driven innovation with operational resilience to build intelligent, scalable systems.
                     </p>
                     <p>
-                        I'm Amir Tamang. My technical journey is anchored by a BSc in Computing and my current pursuit
-                        of a Master of Information Technology at Australian Catholic University (ACU) here in Sydney.
+                        I'm Amir Tamang. My technical journey is anchored by a BSc in Computing and my current pursuit of a Master of Information Technology at Australian Catholic University (ACU) here in Sydney.
                     </p>
                     <p>
-                        Unlike traditional paths, my experience bridges high-level technical architecture and
-                        high-pressure operational environments. I architect full-stack .NET enterprise systems, train
-                        deep learning computer vision models, and analyze complex graph databases. At the same time, my
-                        work in fast-paced Australian logistics, using enterprise tools like SAP Business Warehouse, has
-                        taught me the critical importance of resilience, rigorous quality assurance, and solving
-                        problems in real-time.
+                        Unlike traditional paths, my experience bridges high-level technical architecture and high-pressure operational environments. I architect full-stack .NET enterprise systems, train deep learning computer vision models, and analyze complex graph databases. At the same time, my work in fast-paced Australian logistics, using enterprise tools like SAP Business Warehouse, has taught me the critical importance of resilience, rigorous quality assurance, and solving problems in real-time.
                     </p>
                     <p>
-                        I believe the best software doesn't just run efficiently, it leverages data and machine learning
-                        to fundamentally improve operational workflows. I am passionate about combining my engineering
-                        expertise with my operational background to build systems that are robust, forward-thinking, and
-                        user-centric.
+                        I believe the best software doesn't just run efficiently, it leverages data and machine learning to fundamentally improve operational workflows. I am passionate about combining my engineering expertise with my operational background to build systems that are robust, forward-thinking, and user-centric.
                     </p>
                 </div>
             </div>
 
             <div class="lg:col-span-5 space-y-6">
-                <div
-                    class="bg-slate-900 text-slate-300 p-8 border border-slate-800 rounded-sm shadow-xl font-mono text-sm relative overflow-hidden">
+                <div class="bg-slate-900 text-slate-300 p-8 border border-slate-800 rounded-sm shadow-xl font-mono text-sm relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-cyan-400"></div>
 
                     <div class="flex gap-2 mb-6 border-b border-slate-800 pb-4">
@@ -163,18 +161,12 @@
                     <div class="space-y-3">
                         <p><span class="text-brand-400">root@sydney:~$</span> ./fetch_profile.sh</p>
                         <p class="text-slate-400">{</p>
-                        <p class="pl-4"><span class="text-emerald-400">"name"</span>: <span
-                                class="text-yellow-300">"Amir Tamang"</span>,</p>
-                        <p class="pl-4"><span class="text-emerald-400">"base"</span>: <span
-                                class="text-yellow-300">"Sydney (Open to Adelaide)"</span>,</p>
-                        <p class="pl-4"><span class="text-emerald-400">"education"</span>: <span
-                                class="text-yellow-300">"Master of IT @ ACU"</span>,</p>
-                        <p class="pl-4"><span class="text-emerald-400">"role"</span>: <span
-                                class="text-yellow-300">"Software Engineer"</span>,</p>
-                        <p class="pl-4"><span class="text-emerald-400">"day_job"</span>: <span
-                                class="text-yellow-300">"Team Member | Data Logistics @ Sonoma"</span>,</p>
-                        <p class="pl-4"><span class="text-emerald-400">"daily_fuel"</span>: <span
-                                class="text-yellow-300">"4 eggs"</span></p>
+                        <p class="pl-4"><span class="text-emerald-400">"name"</span>: <span class="text-yellow-300">"Amir Tamang"</span>,</p>
+                        <p class="pl-4"><span class="text-emerald-400">"base"</span>: <span class="text-yellow-300">"Sydney (Open to Adelaide)"</span>,</p>
+                        <p class="pl-4"><span class="text-emerald-400">"education"</span>: <span class="text-yellow-300">"Master of IT @ ACU"</span>,</p>
+                        <p class="pl-4"><span class="text-emerald-400">"role"</span>: <span class="text-yellow-300">"Software Engineer"</span>,</p>
+                        <p class="pl-4"><span class="text-emerald-400">"day_job"</span>: <span class="text-yellow-300">"Team Member | Data Logistics @ Sonoma"</span>,</p>
+                        <p class="pl-4"><span class="text-emerald-400">"daily_fuel"</span>: <span class="text-yellow-300">"4 eggs"</span></p>
                         <p class="text-slate-400">}</p>
                         <p class="animate-pulse font-bold text-lg mt-2">_</p>
                     </div>
@@ -184,32 +176,22 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
 
-            <div
-                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-sm hover:border-brand-500 transition group relative overflow-hidden">
-                <div
-                    class="absolute top-0 right-0 p-6 opacity-10 text-brand-500 text-6xl transform group-hover:scale-110 transition">
-                    <i class="fa-solid fa-bullseye"></i></div>
-                <h3
-                    class="font-mono text-sm font-bold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">
-                    SYS.MISSION</h3>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-sm hover:border-brand-500 transition group relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-6 opacity-10 text-brand-500 text-6xl transform group-hover:scale-110 transition">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="font-mono text-sm font-bold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">SYS.MISSION</h3>
                 <h4 class="text-2xl font-bold mb-4">The Objective</h4>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed relative z-10">To bridge the gap between
-                    complex backend architectures and frontline operational efficiency, building robust software that
-                    solves real-world business problems.</p>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed relative z-10">To bridge the gap between complex backend architectures and frontline operational efficiency, building robust software that solves real-world business problems.</p>
             </div>
 
-            <div
-                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-sm hover:border-brand-500 transition group relative overflow-hidden">
-                <div
-                    class="absolute top-0 right-0 p-6 opacity-10 text-brand-500 text-6xl transform group-hover:scale-110 transition">
-                    <i class="fa-solid fa-eye"></i></div>
-                <h3
-                    class="font-mono text-sm font-bold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">
-                    SYS.VISION</h3>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-sm hover:border-brand-500 transition group relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-6 opacity-10 text-brand-500 text-6xl transform group-hover:scale-110 transition">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3 class="font-mono text-sm font-bold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">SYS.VISION</h3>
                 <h4 class="text-2xl font-bold mb-4">The Trajectory</h4>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed relative z-10">To evolve into a full-stack
-                    engineering leader who creates innovative, data-driven systems while continuously learning and
-                    adapting to the latest technologies.</p>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed relative z-10">To evolve into a full-stack engineering leader who creates innovative, data-driven systems while continuously learning and adapting to the latest technologies.</p>
             </div>
         </div>
 
@@ -219,12 +201,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                <div
-                    class="bg-white dark:bg-slate-900 border-t-2 border-brand-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
+                <div class="bg-white dark:bg-slate-900 border-t-2 border-brand-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
                     <i class="fa-solid fa-code text-2xl text-brand-500 mb-4 block"></i>
                     <h3 class="font-bold text-lg mb-2">Software & Web Engineering</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Building efficient full-stack web
-                        applications, dynamic routing, and custom engines.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Building efficient full-stack web applications, dynamic routing, and custom engines.</p>
                     <ul class="text-sm font-mono text-slate-500 space-y-2">
                         <li><span class="text-brand-500 mr-2">›</span>PHP & MySQL</li>
                         <li><span class="text-brand-500 mr-2">›</span>ASP.NET Core</li>
@@ -233,12 +213,10 @@
                     </ul>
                 </div>
 
-                <div
-                    class="bg-white dark:bg-slate-900 border-t-2 border-cyan-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
+                <div class="bg-white dark:bg-slate-900 border-t-2 border-cyan-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
                     <i class="fa-solid fa-server text-2xl text-cyan-500 mb-4 block"></i>
                     <h3 class="font-bold text-lg mb-2">Systems & DevOps</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Designing deployment pipelines,
-                        containerized architectures, and isolated environments.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Designing deployment pipelines, containerized architectures, and isolated environments.</p>
                     <ul class="text-sm font-mono text-slate-500 space-y-2">
                         <li><span class="text-cyan-500 mr-2">›</span>Docker</li>
                         <li><span class="text-cyan-500 mr-2">›</span>Git / GitHub</li>
@@ -247,12 +225,10 @@
                     </ul>
                 </div>
 
-                <div
-                    class="bg-white dark:bg-slate-900 border-t-2 border-purple-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
+                <div class="bg-white dark:bg-slate-900 border-t-2 border-purple-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
                     <i class="fa-solid fa-chart-line text-2xl text-purple-500 mb-4 block"></i>
                     <h3 class="font-bold text-lg mb-2">Data Science & Analytics</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Extracting insights, building predictive
-                        models, and mapping complex relationships.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Extracting insights, building predictive models, and mapping complex relationships.</p>
                     <ul class="text-sm font-mono text-slate-500 space-y-2">
                         <li><span class="text-purple-500 mr-2">›</span>Python (Pandas)</li>
                         <li><span class="text-purple-500 mr-2">›</span>Neo4j / Cypher</li>
@@ -261,12 +237,10 @@
                     </ul>
                 </div>
 
-                <div
-                    class="bg-white dark:bg-slate-900 border-t-2 border-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
+                <div class="bg-white dark:bg-slate-900 border-t-2 border-emerald-500 border-x border-b border-slate-200 dark:border-slate-800 p-6">
                     <i class="fa-solid fa-building-columns text-2xl text-emerald-500 mb-4 block"></i>
                     <h3 class="font-bold text-lg mb-2">Enterprise Operations</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Connecting operational workflows with
-                        technical data and user-centric visuals.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Connecting operational workflows with technical data and user-centric visuals.</p>
                     <ul class="text-sm font-mono text-slate-500 space-y-2">
                         <li><span class="text-emerald-500 mr-2">›</span>SAP BW</li>
                         <li><span class="text-emerald-500 mr-2">›</span>Logistics Ops</li>
@@ -283,98 +257,77 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <div
-                    class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
+                <div class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-1">Resilience</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Thriving in high-pressure environments and
-                            persistently tackling complex technical bugs.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Thriving in high-pressure environments and persistently tackling complex technical bugs.</p>
                     </div>
                 </div>
 
-                <div
-                    class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
+                <div class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
                         <i class="fa-solid fa-crosshairs"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-1">Precision</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Maintaining strict attention to detail,
-                            from code syntax to operational quality assurance.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Maintaining strict attention to detail, from code syntax to operational quality assurance.</p>
                     </div>
                 </div>
 
-                <div
-                    class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
+                <div class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
                         <i class="fa-solid fa-code-branch"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-1">Adaptability</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Seamlessly bridging the gap between
-                            frontline operations, graphic design, and software engineering.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Seamlessly bridging the gap between frontline operations, graphic design, and software engineering.</p>
                     </div>
                 </div>
 
-                <div
-                    class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
-                    <div
-                        class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
+                <div class="flex items-start gap-4 p-6 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-sm">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-xl text-slate-600 dark:text-slate-400">
                         <i class="fa-solid fa-arrow-trend-up"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-1">Growth</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Continuously expanding my technical stack,
-                            learning new frameworks, and embracing difficult challenges.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Continuously expanding my technical stack, learning new frameworks, and embracing difficult challenges.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="mb-24 border-t border-slate-200 dark:border-slate-800 pt-16">
-            <div
-                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-10 md:p-16 rounded-sm text-center relative overflow-hidden group">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-10 md:p-16 rounded-sm text-center relative overflow-hidden group">
 
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-cyan-500"></div>
 
-                <div
-                    class="absolute -right-4 -top-10 text-slate-100 dark:text-slate-800/40 text-9xl transform -rotate-12 group-hover:scale-110 transition duration-700 pointer-events-none">
+                <div class="absolute -right-4 -top-10 text-slate-100 dark:text-slate-800/40 text-9xl transform -rotate-12 group-hover:scale-110 transition duration-700 pointer-events-none">
                     <i class="fa-solid fa-network-wired"></i>
                 </div>
 
                 <div class="relative z-10">
-                    <div
-                        class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">
+                    <div class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">
                         SYS.EXEC // Initialize_Collaboration
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">Let's Work
-                        Together</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">Let's Work Together</h2>
                     <p class="max-w-2xl mx-auto mb-10 text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                        I'm always interested in new opportunities and collaborations in Sydney or Adelaide. Whether you
-                        need an entry-level software engineer, a data analyst, or want to discuss technical
-                        architectures, I'd love to hear from you.
+                        I'm always interested in new opportunities and collaborations in Sydney or Adelaide. Whether you need an entry-level software engineer, a data analyst, or want to discuss technical architectures, I'd love to hear from you.
                     </p>
 
                     <div class="flex flex-col md:flex-row justify-center gap-4 font-mono text-sm">
 
-                        <a href="contact.html"
-                            class="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20">
+                        <a href="contact.html" class="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20">
                             [ Get In Touch ] <i class="fa-solid fa-paper-plane text-xs"></i>
                         </a>
 
-                        <a href="projects.html"
-                            class="px-8 py-4 bg-slate-100 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 text-slate-900 dark:text-white font-bold uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2">
+                        <a href="projects.html" class="px-8 py-4 bg-slate-100 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 text-slate-900 dark:text-white font-bold uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-folder-open text-slate-400"></i> View Projects
                         </a>
 
-                        <a href="assets/Amir_Resume.pdf" download
-                            class="px-8 py-4 bg-transparent text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-bold uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2">
+                        <a href="assets/Amir_Resume.pdf" download class="px-8 py-4 bg-transparent text-brand-600 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-bold uppercase tracking-wider rounded-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-download"></i> Download CV.pdf
                         </a>
                     </div>
@@ -384,51 +337,59 @@
 
     </main>
 
-    <footer
-        class="py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-center relative z-10">
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-center relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-slate-500 text-sm font-mono">© 2026 Amir Tamang. sys.exit(0)</p>
             <div class="flex gap-6 text-xl text-slate-400">
-                <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-brand-500 transition"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank"
-                    class="hover:text-brand-500 transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-brand-500 transition"><i
-                        class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/amirtamang12" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amir-tamang-51b103188/" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:amir.yonjan12@gmail.com" class="hover:text-brand-500 transition"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Grab the moon and sun icons from the HTML navigation bar
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-        // 1. Check the user's browser memory ('localStorage') to see if they previously saved a theme preference
+        // --- Theme Toggle Logic ---
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+        const darkIcons = document.querySelectorAll('.dark-icon');
+        const lightIcons = document.querySelectorAll('.light-icon');
+        
         if (localStorage.getItem('color-theme') === 'light') {
-            // If they chose light mode before, remove the 'dark' class from the HTML tag and show the moon icon
             document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
+            darkIcons.forEach(icon => icon.classList.remove('hidden'));
         } else {
-            // If they chose dark mode (or haven't chosen yet), add the 'dark' class and show the sun icon
             document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
+            lightIcons.forEach(icon => icon.classList.remove('hidden'));
         }
 
-        // 2. Listen for clicks on the toggle button
-        document.getElementById('theme-toggle').addEventListener('click', function () {
-            // Swap which icon is currently visible
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                darkIcons.forEach(icon => icon.classList.toggle('hidden'));
+                lightIcons.forEach(icon => icon.classList.toggle('hidden'));
 
-            // If the site is currently dark, switch to light and save that choice to browser memory
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = mobileBtn.querySelector('i');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileIcon.classList.remove('fa-xmark');
+                mobileIcon.classList.add('fa-bars');
             } else {
-                // If the site is currently light, switch to dark and save that choice
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+                mobileIcon.classList.remove('fa-bars');
+                mobileIcon.classList.add('fa-xmark');
             }
         });
     </script>

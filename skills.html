@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Skills | Amir Tamang</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpeg" href="amir.jpg">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <script>
-        tailwind.config = { 
+        tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
@@ -23,40 +22,48 @@
                     },
                     colors: {
                         brand: {
-                            50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a',
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
                         }
                     }
                 }
             }
         }
     </script>
-    
+
     <style>
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #3b82f6; }
         ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
-        
+
         .bg-grid-slate-900 {
             background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .bg-grid-slate-100 {
             background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
             background-size: 40px 40px;
         }
     </style>
 </head>
+
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
 
     <div class="fixed inset-0 z-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.2))] pointer-events-none"></div>
 
     <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition">
+            
+            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition relative z-50">
                 <div class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">AT</div>
                 <span class="hidden sm:block">Amir Tamang</span>
             </a>
+
             <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
                 <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition">/home</a>
                 <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition">/about_me</a>
@@ -65,16 +72,38 @@
                 <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition">/projects</a>
                 <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition">/contact</a>
                 <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
-                <button id="theme-toggle" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
                 </button>
+            </div>
+
+            <div class="flex items-center gap-4 md:hidden relative z-50">
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition text-lg" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
+                </button>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars w-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-xl">
+            <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition block">/home</a>
+                <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition block">/about_me</a>
+                <a href="skills.html" class="text-brand-600 dark:text-brand-500 font-semibold block">/skills</a>
+                <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition block">/experience</a>
+                <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition block">/projects</a>
+                <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition block">/contact</a>
             </div>
         </div>
     </nav>
 
     <main class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 flex-grow w-full">
-        
+
         <div class="font-mono text-xs font-semibold tracking-widest text-brand-600 dark:text-brand-500 uppercase mb-4">
             SYS.DIR // Technical_Competencies
         </div>
@@ -86,15 +115,15 @@
         <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed mb-16 border-l-2 border-brand-500 pl-4">
             A comprehensive overview of my technical expertise in software engineering, data architecture, and enterprise systems that I use to build scalable, AI-driven digital solutions.
         </p>
-        
+
         <div class="mb-16">
             <h2 class="text-2xl font-bold mb-2 flex items-center gap-3">
                 <i class="fa-solid fa-code text-brand-500"></i> Software Development
             </h2>
             <p class="text-slate-600 dark:text-slate-400 mb-8 font-mono text-sm">Core programming languages and framework expertise</p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
+
                 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-brand-500 transition group flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-center mb-4">
@@ -158,9 +187,9 @@
                 <i class="fa-solid fa-database text-cyan-500"></i> Data & Architecture
             </h2>
             <p class="text-slate-600 dark:text-slate-400 mb-8 font-mono text-sm">Database management, modeling, and enterprise reporting</p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
+
                 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-cyan-500 transition group flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-center mb-4">
@@ -220,13 +249,13 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16 border-t border-slate-200 dark:border-slate-800 pt-16">
-            
+
             <div>
                 <h2 class="text-2xl font-bold mb-2 flex items-center gap-3">
                     <i class="fa-solid fa-cloud text-emerald-500"></i> Cloud & Infrastructure
                 </h2>
                 <p class="text-slate-600 dark:text-slate-400 mb-8 font-mono text-sm">Orchestration, virtualization, and deployment</p>
-                
+
                 <div class="space-y-6">
                     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-sm hover:border-emerald-500 transition group">
                         <div class="flex justify-between items-center mb-2">
@@ -263,9 +292,9 @@
                     <i class="fa-solid fa-toolbox text-amber-500"></i> Frameworks & Tools
                 </h2>
                 <p class="text-slate-600 dark:text-slate-400 mb-8 font-mono text-sm">Libraries, utilities, and creative software</p>
-                
+
                 <div class="grid grid-cols-2 gap-4">
-                    
+
                     <div class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-4 rounded-sm">
                         <h4 class="font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-brands fa-react text-brand-500"></i> Web UI</h4>
                         <ul class="text-xs font-mono text-slate-500 space-y-2">
@@ -315,9 +344,9 @@
                 <i class="fa-solid fa-people-group text-purple-500"></i> Soft Skills
             </h2>
             <p class="text-slate-600 dark:text-slate-400 mb-8 font-mono text-sm">Professional and interpersonal competencies</p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
+
                 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-sm hover:border-purple-500 transition group">
                     <div class="flex justify-between items-center mb-4">
                         <i class="fa-solid fa-arrows-spin text-2xl text-slate-400 group-hover:text-purple-500 transition"></i>
@@ -410,27 +439,47 @@
     </footer>
 
     <script>
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        // --- Theme Toggle Logic ---
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+        const darkIcons = document.querySelectorAll('.dark-icon');
+        const lightIcons = document.querySelectorAll('.light-icon');
         
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
+            darkIcons.forEach(icon => icon.classList.remove('hidden'));
         } else {
             document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
+            lightIcons.forEach(icon => icon.classList.remove('hidden'));
         }
 
-        document.getElementById('theme-toggle').addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                darkIcons.forEach(icon => icon.classList.toggle('hidden'));
+                lightIcons.forEach(icon => icon.classList.toggle('hidden'));
 
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = mobileBtn.querySelector('i');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileIcon.classList.remove('fa-xmark');
+                mobileIcon.classList.add('fa-bars');
             } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+                mobileIcon.classList.remove('fa-bars');
+                mobileIcon.classList.add('fa-xmark');
             }
         });
     </script>

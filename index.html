@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Tamang | Software Engineer | AI & Data Systems</title>
+    <title>Amir Tamang | Software Engineer & AI Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpeg" href="amir.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -48,10 +48,11 @@
 
     <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition">
+            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition relative z-50">
                 <div class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">AT</div>
-                <span class="hidden sm:block">Amir Tamang</span>
+                <span>Amir Tamang</span>
             </a>
+            
             <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
                 <a href="index.html" class="text-brand-600 dark:text-brand-500 font-semibold">/home</a>
                 <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition">/about_me</a>
@@ -60,10 +61,32 @@
                 <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition">/projects</a>
                 <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition">/contact</a>
                 <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
-                <button id="theme-toggle" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
                 </button>
+            </div>
+
+            <div class="flex items-center gap-4 md:hidden relative z-50">
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition text-lg" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
+                </button>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars w-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-xl">
+            <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a href="index.html" class="text-brand-600 dark:text-brand-500 font-semibold block">/home</a>
+                <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition block">/about_me</a>
+                <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition block">/skills</a>
+                <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition block">/experience</a>
+                <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition block">/projects</a>
+                <a href="contact.html" class="hover:text-slate-900 dark:hover:text-white transition block">/contact</a>
             </div>
         </div>
     </nav>
@@ -83,7 +106,7 @@
                 
                 <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-none">
                     Software Engineer /<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-cyan-400">AI & Data Systems</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-cyan-400">AI Specialist</span>
                 </h1>
                 
                 <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed border-l-2 border-brand-500 pl-4">
@@ -242,27 +265,47 @@
     </footer>
 
     <script>
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        // --- Theme Toggle Logic ---
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+        const darkIcons = document.querySelectorAll('.dark-icon');
+        const lightIcons = document.querySelectorAll('.light-icon');
         
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
+            darkIcons.forEach(icon => icon.classList.remove('hidden'));
         } else {
             document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
+            lightIcons.forEach(icon => icon.classList.remove('hidden'));
         }
 
-        document.getElementById('theme-toggle').addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                darkIcons.forEach(icon => icon.classList.toggle('hidden'));
+                lightIcons.forEach(icon => icon.classList.toggle('hidden'));
 
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = mobileBtn.querySelector('i');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileIcon.classList.remove('fa-xmark');
+                mobileIcon.classList.add('fa-bars');
             } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+                mobileIcon.classList.remove('fa-bars');
+                mobileIcon.classList.add('fa-xmark');
             }
         });
     </script>

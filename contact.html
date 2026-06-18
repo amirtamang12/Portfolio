@@ -65,18 +65,15 @@
         class="fixed inset-0 z-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.2))] pointer-events-none">
     </div>
 
-    <nav
-        class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html"
-                class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition">
-                <div
-                    class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">
-                    AT</div>
+            
+            <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-3 hover:opacity-80 transition relative z-50">
+                <div class="w-8 h-8 bg-brand-600 text-white flex items-center justify-center rounded-sm font-mono text-sm">AT</div>
                 <span class="hidden sm:block">Amir Tamang</span>
             </a>
-            <div
-                class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
+
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400 items-center">
                 <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition">/home</a>
                 <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition">/about_me</a>
                 <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition">/skills</a>
@@ -84,11 +81,32 @@
                 <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition">/projects</a>
                 <a href="contact.html" class="text-brand-600 dark:text-brand-500 font-semibold">/contact</a>
                 <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
-                <button id="theme-toggle" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition"
-                    title="Toggle Theme">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
                 </button>
+            </div>
+
+            <div class="flex items-center gap-4 md:hidden relative z-50">
+                <button class="theme-toggle text-slate-500 hover:text-slate-900 dark:hover:text-white transition text-lg" title="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon hidden"></i>
+                    <i class="fa-solid fa-sun light-icon hidden"></i>
+                </button>
+                <div class="w-px h-4 bg-slate-300 dark:bg-slate-700"></div>
+                <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars w-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-xl">
+            <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition block">/home</a>
+                <a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition block">/about_me</a>
+                <a href="skills.html" class="hover:text-slate-900 dark:hover:text-white transition block">/skills</a>
+                <a href="experience.html" class="hover:text-slate-900 dark:hover:text-white transition block">/experience</a>
+                <a href="projects.html" class="hover:text-slate-900 dark:hover:text-white transition block">/projects</a>
+                <a href="contact.html" class="text-brand-600 dark:text-brand-500 font-semibold block">/contact</a>
             </div>
         </div>
     </nav>
@@ -240,27 +258,47 @@
     </footer>
 
     <script>
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        // --- Theme Toggle Logic ---
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+        const darkIcons = document.querySelectorAll('.dark-icon');
+        const lightIcons = document.querySelectorAll('.light-icon');
 
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
+            darkIcons.forEach(icon => icon.classList.remove('hidden'));
         } else {
             document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
+            lightIcons.forEach(icon => icon.classList.remove('hidden'));
         }
 
-        document.getElementById('theme-toggle').addEventListener('click', function () {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                darkIcons.forEach(icon => icon.classList.toggle('hidden'));
+                lightIcons.forEach(icon => icon.classList.toggle('hidden'));
 
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            });
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = mobileBtn.querySelector('i');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileIcon.classList.remove('fa-xmark');
+                mobileIcon.classList.add('fa-bars');
             } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
+                mobileIcon.classList.remove('fa-bars');
+                mobileIcon.classList.add('fa-xmark');
             }
         });
     </script>
